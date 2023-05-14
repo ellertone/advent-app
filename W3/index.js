@@ -140,3 +140,24 @@ else{
 // for (var key in student){
 //     console.log(student[key])
 // }
+
+// alex brown
+
+
+this.car = "honda civic"
+
+var marksGarage = {
+  car:"Aston martin",
+  getCar : function(){
+    return this.car;
+  }
+};
+
+console.log(marksGarage.getCar());
+var storeGetCar = marksGarage.getCar;
+
+//work over
+console.log(storeGetCar());
+var theRealGetCar = marksGarage.getCar.bind(marksGarage);
+
+console.log(theRealGetCar());
