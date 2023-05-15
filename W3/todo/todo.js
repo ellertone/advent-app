@@ -25,7 +25,14 @@ function createTodo(title,dueDate){
         id : id
     });
 
+    saveTodos();
     
+}
+
+
+// Save Todo
+function saveTodos(){
+    localStorage.setItem('todos', JSON.stringify(todos));
 }
 
 //Remove Todo
@@ -43,11 +50,15 @@ function removeTodo(idToDelete){
        render();
     };
     
+    saveTodos();
+
 
 
  render();
-
-//Controller Section
+ 
+ 
+ 
+ //Controller Section
 
 function addToDo(){
     const textbox = document.getElementById("todo-title");
