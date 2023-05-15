@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My ToDo App</title>
+    <link rel="stylesheet" href="todo.css">
 </head>
 <body>
-    <input id="todo-title" type="text" />
-    <br>
-    <input id="date-picker" type="date" />
-    <br>
-    <button onclick="addToDo()" >Add ToDo</button>
+    <div class="container">
+        <h1>My To-Do List</h1>
 
-    <div id="todo-list" > 
-        <script src="todo.js"></script>
+        <div class="form">
+            <input id="todo-title" type="text" placeholder="Enter task name" />
+            <input id="date-picker" type="date" />
+            <button onclick="addToDo()">Add ToDo</button>
+        </div>
+
+        <ul id="todo-list">
+            <script src="todo.js"></script>
+        </ul>
     </div>
-   
-    
 </body>
 </html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue Todo App</title>
+</head>
+<body>
+  <div id="app">
+    <h1>Todo List</h1>
+    <input v-model="newTodo" type="text">
+    <button @click="addTodo">Add</button>
+    <ul>
+      <li v-for="(todo, index) in todos" :key="index">
+        {{ todo }}
+        <button @click="removeTodo(index)">Remove</button>
+      </li>
+    </ul>
+  </div>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="app.js"></script>
+</body>
+</html>

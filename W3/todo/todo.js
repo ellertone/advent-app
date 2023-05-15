@@ -1,18 +1,31 @@
 
 //Model section
 
-let todos = [{
-    title: 'Get kids',
-    dueDate: '10-10-2020',
-    id : 'id1'
-},
-{title:'Buy shoes',
-dueDate: '11-11-2020',
-id : 'id2'},
+// if local storage has a todos array use it, else use default.
+let todos;
 
-{title:'New Car', 
-dueDate: '12-12-2020',
-id:'id3'}];
+//retreive from local storage 
+const savedTodos = JSON.parse(localStorage.getItem('todos'));
+//check if its an array
+if(Array.isArray(savedTodos)){
+    todos = savedTodos;
+
+} else {
+    todos = [{
+        title: 'Get kids',
+        dueDate: '10-10-2020',
+        id : 'id1'
+    },
+    {title:'Buy shoes',
+    dueDate: '11-11-2020',
+    id : 'id2'},
+    
+    {title:'New Car', 
+    dueDate: '12-12-2020',
+    id:'id3'}];
+    
+}
+
 
 //Add Todo
 
@@ -46,11 +59,13 @@ function removeTodo(idToDelete){
         } else{ 
         return true
        }});
+
+       saveTodos();
     
        render();
     };
     
-    saveTodos();
+    
 
 
 
@@ -65,6 +80,7 @@ function addToDo(){
     const title= textbox.value;
     const datePicker = document.getElementById("date-picker");
     const dueDate = datePicker.value;
+   
     createTodo(title, dueDate);
     
     render();
